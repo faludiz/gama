@@ -17,7 +17,6 @@ AC_CONFIG_AUX_DIR([scripts/config.aux])
 AM_INIT_AUTOMAKE(subdir-objects)
 AM_SILENT_RULES([yes])
 
-AM_CONDITIONAL([BUILD_DEMO_G3_XYZBLH], [true])
 
 dnl You can comment out the following macro if you have the package
 dnl autoconf-archive installed
@@ -64,6 +63,8 @@ AC_ARG_ENABLE([extra-tests],
     enable_extra_tests=no]
 )
 AC_MSG_NOTICE([checking whether extra tests are enabled... $enable_extra_tests])
+
+AM_CONDITIONAL([BUILD_DEMO_G3_XYZBLH], [false])
 
 
 dnl Optional build of gama-g3
