@@ -10,6 +10,7 @@
 #include <charconv>
 #include <regex>
 #include <cmath>
+#include <system_error>
 
 #include <gnu_gama/version.h>
 
@@ -51,8 +52,19 @@ const char* const main_help =
   "        -v  Print the program version\n"
   "\nUse -h for complete documentation.\n";
 
+// ChatGPT:
+// This macro is defined in libc++ only if floating-point from_chars is implemented:
+#if defined(_LIBCPP_VERSION) && !defined(_LIBCPP_HAS_FROM_CHARS_FLOATING_POINT)
+#define NEED_FLOATING_FROM_CHARS_WORKAROUND
+#endif
 
 bool parse_double(const std::string& input, double& result) {
+#ifdef NEED_FLOATING_FROM_CHARS_WORKAROUND
+    char* endPtr = nullptr;
+    const char* c = input.c_str();
+    result = std::strtod(c, &endPtr);
+    return endPtr == c + input.size();
+#else
   const char* begin = input.data();
   const char* end = begin + input.size();
 
@@ -60,6 +72,7 @@ bool parse_double(const std::string& input, double& result) {
 
   // Success only if conversion succeeded and no extra characters remain
   return ec == std::errc() && ptr == end;
+#endif
 }
 
 int main(int argc, char* argv[])

@@ -64,7 +64,7 @@ AC_ARG_ENABLE([extra-tests],
 )
 AC_MSG_NOTICE([checking whether extra tests are enabled... $enable_extra_tests])
 
-AM_CONDITIONAL([BUILD_DEMO_G3_XYZBLH], [false])
+AM_CONDITIONAL([BUILD_DEMO_G3_XYZBLH], [true])
 
 
 dnl Optional build of gama-g3
