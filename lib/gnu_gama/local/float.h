@@ -1,6 +1,6 @@
 /*
     GNU Gama -- adjustment of geodetic networks
-    Copyright (C) 2000, 2025  Ales Cepek <cepek@fsv.cvut.cz>
+    Copyright (C) 2000  Ales Cepek <cepek@fsv.cvut.cz>
 
     This file is part of the GNU Gama C++ library.
 
@@ -22,13 +22,13 @@
 #ifndef gama_local_Float_h
 #define gama_local_Float_h
 
-#include <gnu_gama/radian.h>
+#include <cmath>
 
 namespace GNU_gama { namespace local {
 
-    // #ifndef M_PI
-    // #define M_PI 3.14159265358979323846
-    // #endif
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
 
 #define R2G  200.0/M_PI
 #define G2R  M_PI/200.0
@@ -38,3 +38,11 @@ namespace GNU_gama { namespace local {
 }}   // namespace GNU_gama::local
 
 #endif
+
+
+
+
+
+
+
+

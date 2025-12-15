@@ -1,6 +1,6 @@
 /*
     GNU Gama --- Geodesy and Mapping C++ library
-    Copyright (C) 2004, 2025  Ales Cepek <cepek@gnu.org>
+    Copyright (C) 2004  Ales Cepek <cepek@gnu.org>
 
     This file is part of the GNU Gama C++ library.
 
@@ -21,16 +21,6 @@
 
 #ifndef GNU_gama_gnu_gama_radian_h_gnugamaradian_h
 #define GNU_gama_gnu_gama_radian_h_gnugamaradian_h
-
-
-// c++20
-#ifdef __cpp_lib_math_constants
-#include <numbers>
-
-#ifndef M_PI
-#define M_PI std::numbers::pi
-#endif
-#endif
 
 
 namespace GNU_gama {
