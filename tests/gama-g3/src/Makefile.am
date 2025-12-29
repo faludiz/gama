@@ -21,4 +21,6 @@ check_ellipsoid_xyz2blh_list_CPPFLAGS = -I $(top_srcdir)/lib
 
 geng3test_SOURCES  = geng3test.cpp
 geng3test_LDADD    = $(top_builddir)/lib/libgama.a
-geng3test_CPPFLAGS = -I $(top_srcdir)/lib
+geng3test_CPPFLAGS = -I $(top_srcdir)/tests/gama-g3/src \
+										 -I $(top_srcdir)/tests/gama-g3 \
+                     -I $(top_srcdir)/lib

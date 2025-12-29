@@ -7,11 +7,20 @@
 using namespace std;
 using namespace GNU_gama;
 
-double PI = 3.14159265358979323846; // pi_v in <numbers> cince c++20
+#include <version>
+#include <numbers>
+
+const double PI = 3.14159265358979323846e0; // pi in <numbers> since c++20
 inline double int2rad(int a) { return double(a)/180.0*PI; }
 
 int main()
 {
+#ifdef __cpp_lib_math_constants
+  cout << "**** Support for c++20 __cpp_lib_math_constants YES\n\n";
+#else
+  cout << "**** Support for c++20 __cpp_lib_math_constants NO\n\n";
+#endif
+
   cout << "XYZ -> BLH -> XYZ\n" << endl
        << " B   L    H   |dx| |dy| |dz|" << endl;
 

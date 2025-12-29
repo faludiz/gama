@@ -13,6 +13,8 @@
 #include <system_error>
 
 #include <gnu_gama/version.h>
+#include <gnu_gama/ellipsoid.h>
+#include <gnu_gama/gon2deg.h>
 
 namespace
 {
