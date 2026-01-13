@@ -41,7 +41,6 @@ int main(int argc, char* argv[])
   string Lstr = argv[2];
   string Hstr = argv[3];
 
-  int error {0};
   double B, L;
   bool Bok = GNU_gama::deg2gon(Bstr, B);
   if (!Bok) {
@@ -60,7 +59,7 @@ int main(int argc, char* argv[])
   cout.precision(3);
   cout << "\nBLH  " << Bstr << "\n"
        << "     " << Lstr << "\n"
-       << "   " << std::setw(10+1+16) << Hstr  << "\n\n";
+       << "     " << Hstr  << "\n\n";
 
   GNU_gama::Ellipsoid ellipsoid;  // WGS84
 
