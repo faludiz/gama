@@ -1,4 +1,8 @@
 #  TODO
+## XML extensions
+
+* introduce naming convention *.inp.xml and *.out.xml
+
 ## Missing functionality
 
 * replace error ellipses for points with XYZ coordinates with 3D
